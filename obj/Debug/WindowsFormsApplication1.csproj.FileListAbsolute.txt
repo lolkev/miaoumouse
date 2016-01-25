@@ -1,0 +1,31 @@
+c:\users\administrateur\documents\visual studio 2012\Projects\WindowsFormsApplication1\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.exe.config
+c:\users\administrateur\documents\visual studio 2012\Projects\WindowsFormsApplication1\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.exe
+c:\users\administrateur\documents\visual studio 2012\Projects\WindowsFormsApplication1\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.pdb
+c:\users\administrateur\documents\visual studio 2012\Projects\WindowsFormsApplication1\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.csprojResolveAssemblyReference.cache
+c:\users\administrateur\documents\visual studio 2012\Projects\WindowsFormsApplication1\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Form1.resources
+c:\users\administrateur\documents\visual studio 2012\Projects\WindowsFormsApplication1\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Properties.Resources.resources
+c:\users\administrateur\documents\visual studio 2012\Projects\WindowsFormsApplication1\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.csproj.GenerateResource.Cache
+c:\users\administrateur\documents\visual studio 2012\Projects\WindowsFormsApplication1\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.exe
+c:\users\administrateur\documents\visual studio 2012\Projects\WindowsFormsApplication1\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.pdb
+c:\users\administrateur\documents\visual studio 2012\Projects\WindowsFormsApplication1\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Formcap.resources
+C:\Users\Kevin.Mercier\Desktop\vsmiaoumouse\WindowsFormsApplication1\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.exe.config
+C:\Users\Kevin.Mercier\Desktop\vsmiaoumouse\WindowsFormsApplication1\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.exe
+C:\Users\Kevin.Mercier\Desktop\vsmiaoumouse\WindowsFormsApplication1\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.pdb
+C:\Users\Kevin.Mercier\Desktop\vsmiaoumouse\WindowsFormsApplication1\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.exe
+C:\Users\Kevin.Mercier\Desktop\vsmiaoumouse\WindowsFormsApplication1\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.pdb
+C:\Users\Kevin.Mercier\Desktop\vsmiaoumouse\WindowsFormsApplication1\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.csprojResolveAssemblyReference.cache
+C:\Users\Kevin.Mercier\Desktop\vsmiaoumouse\WindowsFormsApplication1\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Form1.resources
+C:\Users\Kevin.Mercier\Desktop\vsmiaoumouse\WindowsFormsApplication1\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Formcap.resources
+C:\Users\Kevin.Mercier\Desktop\vsmiaoumouse\WindowsFormsApplication1\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Properties.Resources.resources
+C:\Users\Kevin.Mercier\Desktop\vsmiaoumouse\WindowsFormsApplication1\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.csproj.GenerateResource.Cache
+C:\Users\Formateur-C17\Desktop\Kev\mm\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.exe.config
+C:\Users\Formateur-C17\Desktop\Kev\mm\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.exe
+C:\Users\Formateur-C17\Desktop\Kev\mm\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.pdb
+C:\Users\Formateur-C17\Desktop\Kev\mm\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.exe
+C:\Users\Formateur-C17\Desktop\Kev\mm\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.pdb
+C:\Users\Formateur-C17\Desktop\Kev\mm\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.csprojResolveAssemblyReference.cache
+C:\Users\Formateur-C17\Desktop\Kev\mm\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Form1.resources
+C:\Users\Formateur-C17\Desktop\Kev\mm\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Formcap.resources
+C:\Users\Formateur-C17\Desktop\Kev\mm\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Form3.resources
+C:\Users\Formateur-C17\Desktop\Kev\mm\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Properties.Resources.resources
+C:\Users\Formateur-C17\Desktop\Kev\mm\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.csproj.GenerateResource.Cache
