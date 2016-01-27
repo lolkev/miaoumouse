@@ -31,3 +31,20 @@ C:\Users\Kevin\Documents\Visual Studio 2012\Projects\vsmiaoumouse\WindowsFormsAp
 C:\Users\Kevin\Documents\Visual Studio 2012\Projects\vsmiaoumouse\WindowsFormsApplication1\WindowsFormsApplication1\obj\Release\WindowsFormsApplication1.Properties.Resources.resources
 C:\Users\Kevin\Documents\Visual Studio 2012\Projects\vsmiaoumouse\WindowsFormsApplication1\WindowsFormsApplication1\obj\Release\WindowsFormsApplication1.csproj.GenerateResource.Cache
 C:\Users\Kevin\Documents\Visual Studio 2012\Projects\vsmiaoumouse\WindowsFormsApplication1\WindowsFormsApplication1\obj\Release\WindowsFormsApplication1.csprojResolveAssemblyReference.cache
+C:\Users\Formateur-C17\Desktop\Kev\mm\WindowsFormsApplication1\bin\Release\WindowsFormsApplication1.exe.config
+C:\Users\Formateur-C17\Desktop\Kev\mm\WindowsFormsApplication1\bin\Release\WindowsFormsApplication1.exe
+C:\Users\Formateur-C17\Desktop\Kev\mm\WindowsFormsApplication1\bin\Release\WindowsFormsApplication1.pdb
+C:\Users\Formateur-C17\Desktop\Kev\mm\WindowsFormsApplication1\bin\Release\Nito.AsyncEx.Concurrent.dll
+C:\Users\Formateur-C17\Desktop\Kev\mm\WindowsFormsApplication1\bin\Release\Nito.AsyncEx.dll
+C:\Users\Formateur-C17\Desktop\Kev\mm\WindowsFormsApplication1\bin\Release\Nito.AsyncEx.Enlightenment.dll
+C:\Users\Formateur-C17\Desktop\Kev\mm\WindowsFormsApplication1\bin\Release\Nito.AsyncEx.xml
+C:\Users\Formateur-C17\Desktop\Kev\mm\WindowsFormsApplication1\bin\Release\Nito.AsyncEx.Concurrent.xml
+C:\Users\Formateur-C17\Desktop\Kev\mm\WindowsFormsApplication1\bin\Release\Nito.AsyncEx.Enlightenment.xml
+C:\Users\Formateur-C17\Desktop\Kev\mm\WindowsFormsApplication1\obj\Release\WindowsFormsApplication1.Form1.resources
+C:\Users\Formateur-C17\Desktop\Kev\mm\WindowsFormsApplication1\obj\Release\WindowsFormsApplication1.Formcap.resources
+C:\Users\Formateur-C17\Desktop\Kev\mm\WindowsFormsApplication1\obj\Release\WindowsFormsApplication1.Form3.resources
+C:\Users\Formateur-C17\Desktop\Kev\mm\WindowsFormsApplication1\obj\Release\WindowsFormsApplication1.Properties.Resources.resources
+C:\Users\Formateur-C17\Desktop\Kev\mm\WindowsFormsApplication1\obj\Release\WindowsFormsApplication1.csproj.GenerateResource.Cache
+C:\Users\Formateur-C17\Desktop\Kev\mm\WindowsFormsApplication1\obj\Release\WindowsFormsApplication1.exe
+C:\Users\Formateur-C17\Desktop\Kev\mm\WindowsFormsApplication1\obj\Release\WindowsFormsApplication1.pdb
+C:\Users\Formateur-C17\Desktop\Kev\mm\WindowsFormsApplication1\obj\Release\WindowsFormsApplication1.csprojResolveAssemblyReference.cache

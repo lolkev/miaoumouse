@@ -28,24 +28,14 @@ namespace WindowsFormsApplication1
         [DllImport("user32.dll")]
         static extern bool GetCursorPos(ref Point lpPoint);
 
-        [DllImport("user32.dll", CharSet = CharSet.Auto, SetLastError = true)]
-        private static extern IntPtr SetWindowsHookEx(int idHook,
-            LowLevelKeyboardProc lpfn, IntPtr hMod, uint dwThreadId);
+        private enum MouseMessages
+        {
+            MOUSEEVENTF_LEFTDOWN = 0x02,
+            MOUSEEVENTF_LEFTUP = 0x04,
+            MOUSEEVENTF_WHEEL = 0x0800,
+        }
 
-        [DllImport("user32.dll", CharSet = CharSet.Auto, SetLastError = true)]
-        [return: MarshalAs(UnmanagedType.Bool)]
-        private static extern bool UnhookWindowsHookEx(IntPtr hhk);
-
-        [DllImport("user32.dll", CharSet = CharSet.Auto, SetLastError = true)]
-        private static extern IntPtr CallNextHookEx(IntPtr hhk, int nCode,
-            IntPtr wParam, IntPtr lParam);
-
-        [DllImport("kernel32.dll", CharSet = CharSet.Auto, SetLastError = true)]
-        private static extern IntPtr GetModuleHandle(string lpModuleName);
-
-        private const int MOUSEEVENTF_LEFTDOWN = 0x02;
-        private const int MOUSEEVENTF_LEFTUP = 0x04;
-        private const int MOUSEEVENTF_WHEEL = 0x0800;
+        bool progressCountedOnceAlready = false;
 
         Stopwatch timer = new Stopwatch();
         Stopwatch keyStrokeTimer = new Stopwatch();
@@ -58,29 +48,28 @@ namespace WindowsFormsApplication1
         int repetitionsActuelles = 0;
         int nombreRepetitions = 1;
 
-        private const int WH_KEYBOARD_LL = 13;
-        private const int WM_KEYDOWN = 0x0100;
-        private const int WM_KEYUP = 0x0101;
-        private static LowLevelKeyboardProc _proc = HookCallback;
-        private static IntPtr _hookID = IntPtr.Zero;
-
         public void doMouseClick(int X, int Y)
         {
             Point retPoint = new Point();
             GetCursorPos(ref retPoint);
             SetCursorPos(X, Y);
-            mouse_event(MOUSEEVENTF_LEFTDOWN, (uint)X, (uint)Y, 0, 0);
-            mouse_event(MOUSEEVENTF_LEFTUP, (uint)X, (uint)Y, 0, 0);
+            mouse_event((uint)MouseMessages.MOUSEEVENTF_LEFTDOWN, (uint)X, (uint)Y, 0, 0);
+            mouse_event((uint)MouseMessages.MOUSEEVENTF_LEFTUP, (uint)X, (uint)Y, 0, 0);
             SetCursorPos(retPoint.X, retPoint.Y);
         }
 
+
+        public void doKeyInput(string key, string duration)
+        {
+            KeyPressHelper.HoldKey(Convert.ToByte(key), Convert.ToInt32(duration));
+        }
 
         public void doMouseScroll(int X, int Y, int delta)
         {
             Point retPoint = new Point();
             GetCursorPos(ref retPoint);
             SetCursorPos(X, Y);
-            mouse_event(MOUSEEVENTF_WHEEL, (uint)X, (uint)Y, (uint)delta, 0);
+            mouse_event((uint)MouseMessages.MOUSEEVENTF_WHEEL, (uint)X, (uint)Y, (uint)delta, 0);
             SetCursorPos(retPoint.X, retPoint.Y);
         }
 
@@ -117,13 +106,9 @@ namespace WindowsFormsApplication1
                             {
                                 doScroll(instruction);
                             }
-                            else if (instruction.StartsWith("+in"))
+                            else if (instruction.StartsWith("in"))
                             {
-                                //doInput(instruction);
-                            }
-                            else if (instruction.StartsWith("-in"))
-                            {
-                                //stopInput(instruction);
+                                doInput(instruction);
                             }
                             else if (instruction.StartsWith("wt"))
                             {
@@ -133,13 +118,14 @@ namespace WindowsFormsApplication1
                             {
                                 progress = getRepeatInstruction(progress, chiffreRepet);
                             }
-                            
+
                             worker.ReportProgress(((progress) * 100) / (sequence.Count() * chiffreRepet));
                         }
                     }
-
                 }
-
+                worker.CancelAsync();
+                progress += 1;
+                e.Result = "finished";
             }
             e.Cancel = true;
 
@@ -149,7 +135,11 @@ namespace WindowsFormsApplication1
         {
             repetitionsActuelles++;
             nombreRepetitions = chiffreRepet;
-            progress -= 1;
+            if (!progressCountedOnceAlready)
+            {
+                progress -= 1;
+            }
+            progressCountedOnceAlready = true;
             return progress;
         }
 
@@ -162,6 +152,12 @@ namespace WindowsFormsApplication1
                 int i;
             } while (timer.ElapsedMilliseconds < waitTime);
             timer.Reset();
+        }
+
+        private void doInput(string instruction)
+        {
+            string[] coords = instruction.Trim('i', 'n', '(', ')').Split(',');
+            doKeyInput(coords[0], coords[1]); //coords[0]= key; coords[1] = duration en ms 
         }
 
         private void doClick(string instruction)
@@ -185,76 +181,22 @@ namespace WindowsFormsApplication1
             {
                 if (s.Contains("rp"))
                     repet = s;
+                else
+                    repet = "rp(1);";
             }
 
-            string rt = repet.Trim(new char[] { ' ', 'r', 'p', '(', ')' });
+            string rt = repet.Trim(new char[] { ' ', 'r', 'p', '(', ')', ';' });
 
             chiffreRepet = Convert.ToInt32(rt);
-
 
             repetitionsActuelles = 0;
             nombreRepetitions = 1;
 
         }
 
-
         public Form1()
         {
             InitializeComponent();
-            //_hookID = SetHook(_proc);
-        }
-
-        private static IntPtr SetHook(LowLevelKeyboardProc proc)
-        {
-            using (Process curProcess = Process.GetCurrentProcess())
-            using (ProcessModule curModule = curProcess.MainModule)
-            {
-                return SetWindowsHookEx(WH_KEYBOARD_LL, proc,
-                    GetModuleHandle(curModule.ModuleName), 0);
-            }
-        }
-
-        private delegate IntPtr LowLevelKeyboardProc(
-            int nCode, IntPtr wParam, IntPtr lParam);
-
-        private static IntPtr HookCallback(
-            int nCode, IntPtr wParam, IntPtr lParam)
-        {
-            Stopwatch sw = new Stopwatch();
-            Debug.WriteLine("time : " + KeyPressHelperExtensions.Time(
-                sw, () => KeyPressHelperExtensions.GetKeyFromHookCallback(nCode, wParam, lParam)));
-
-            #region probation
-            //if (nCode >= 0 && wParam == (IntPtr)WM_KEYDOWN)
-            //{
-            //    kph1.previousPressedKeyCode = 0;
-            //    kph1.currentReleasedKeyCode = 0;
-            //    int vkCode = Marshal.ReadInt32(lParam);   //timemr 
-                
-            //    kph1.currentPressedKeyCode = (Keys)vkCode;
-            //    kphList.Add(kph1);
-            //}
-            //if (nCode >= 0 && wParam == (IntPtr)WM_KEYUP) // lparam manage l'état précédent de la touche. (toujours pas compris à voir)
-            //{
-            //    kph2.previousPressedKeyCode = kphList.Find(k => k.Equals(kph1)).currentPressedKeyCode;
-            //    kph2.currentPressedKeyCode = 0;
-            //    int vkCode = Marshal.ReadInt32(lParam);
-            //    kph2.currentReleasedKeyCode = (Keys)vkCode;
-            //    if (kph2.previousPressedKeyCode == kph2.currentReleasedKeyCode)
-            //    {
-            //        //keyStrokeTimer.Stop();
-            //        //MessageBox.Show("" + keyStrokeTimer.ElapsedMilliseconds);
-            //        //outputKeyStrokeToDebug(keyStrokeTimer, kph2);
-            //    }
-            //    else
-            //    {
-            //        //keyStrokeTimer.Stop();
-            //    }
-            //}
-            #endregion
-
-
-            return CallNextHookEx(_hookID, nCode, wParam, lParam);
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -279,47 +221,52 @@ namespace WindowsFormsApplication1
 
         private void button2_Click(object sender, EventArgs e)
         {
-
-            UnhookWindowsHookEx(_hookID);
-            mre.Reset();
-            pause = false;
-            BackgroundWorker bw = new BackgroundWorker();
-            initBackgroundWorker();
-            List<string> sequence = new List<string>();
-            OpenFileDialog fd = new OpenFileDialog();
-            Stream myStream;
-
-            fd.InitialDirectory = Environment.CurrentDirectory;
-            fd.Filter = "txt files (*.txt)|*.txt|All files (*.*)|*.*";
-
-            if (fd.ShowDialog() == DialogResult.OK)
+            if (!bw.IsBusy)
             {
-                try
+                mre.Reset();
+                pause = false;
+                initBackgroundWorker();
+                List<string> sequence = new List<string>();
+                OpenFileDialog fd = new OpenFileDialog();
+                Stream myStream;
+
+                fd.InitialDirectory = Environment.CurrentDirectory;
+                fd.Filter = "txt files (*.txt)|*.txt|All files (*.*)|*.*";
+
+                if (fd.ShowDialog() == DialogResult.OK)
                 {
-                    fd.OpenFile();
-
-                    if ((myStream = fd.OpenFile()) != null)
+                    try
                     {
-                        using (myStream)
-                        {
-                            StreamReader sr = new StreamReader(myStream);
+                        fd.OpenFile();
 
-                            foreach (string s in sr.ReadToEnd().Split(';'))
+                        if ((myStream = fd.OpenFile()) != null)
+                        {
+                            using (myStream)
                             {
-                                sequence.Add(s);
+                                StreamReader sr = new StreamReader(myStream);
+
+                                foreach (string s in sr.ReadToEnd().Split(';'))
+                                {
+                                    if(!string.IsNullOrEmpty(s))
+                                    sequence.Add(s.Trim());
+                                }
                             }
                         }
                     }
-
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Error: Could not read file from disk. Original error: " + ex.Message);
+                    }
                 }
-                catch (Exception ex)
+                if (sequence.Count() != 0)
                 {
-                    MessageBox.Show("Error: Could not read file from disk. Original error: " + ex.Message);
+                    bw.CancelAsync();
+                    bw.RunWorkerAsync(sequence);
                 }
             }
-            if (sequence.Count() != 0)
+            else
             {
-                bw.RunWorkerAsync(sequence);
+                bw.CancelAsync();
             }
         }
 
@@ -339,6 +286,10 @@ namespace WindowsFormsApplication1
             {
                 this.tbProgress.Text = ("Error: " + e.Error.Message);
             }
+            else if(e.Result.ToString() == "finished")
+            {
+                this.tbProgress.Text = "victoly";
+            }
 
             else
             {
@@ -355,5 +306,6 @@ namespace WindowsFormsApplication1
                 bw.CancelAsync();
             }
         }
+
     }
 }

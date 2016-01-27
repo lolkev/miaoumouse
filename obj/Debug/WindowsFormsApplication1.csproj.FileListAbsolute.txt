@@ -29,3 +29,10 @@ C:\Users\Formateur-C17\Desktop\Kev\mm\WindowsFormsApplication1\obj\Debug\Windows
 C:\Users\Formateur-C17\Desktop\Kev\mm\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Form3.resources
 C:\Users\Formateur-C17\Desktop\Kev\mm\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Properties.Resources.resources
 C:\Users\Formateur-C17\Desktop\Kev\mm\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.csproj.GenerateResource.Cache
+C:\Users\Formateur-C17\Desktop\Kev\mm\WindowsFormsApplication1\bin\Debug\EventHook.dll
+C:\Users\Formateur-C17\Desktop\Kev\mm\WindowsFormsApplication1\bin\Debug\Nito.AsyncEx.Concurrent.dll
+C:\Users\Formateur-C17\Desktop\Kev\mm\WindowsFormsApplication1\bin\Debug\Nito.AsyncEx.dll
+C:\Users\Formateur-C17\Desktop\Kev\mm\WindowsFormsApplication1\bin\Debug\Nito.AsyncEx.Enlightenment.dll
+C:\Users\Formateur-C17\Desktop\Kev\mm\WindowsFormsApplication1\bin\Debug\Nito.AsyncEx.xml
+C:\Users\Formateur-C17\Desktop\Kev\mm\WindowsFormsApplication1\bin\Debug\Nito.AsyncEx.Concurrent.xml
+C:\Users\Formateur-C17\Desktop\Kev\mm\WindowsFormsApplication1\bin\Debug\Nito.AsyncEx.Enlightenment.xml
