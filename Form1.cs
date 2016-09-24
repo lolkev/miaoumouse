@@ -83,7 +83,7 @@ namespace WindowsFormsApplication1
             int chiffreRepet;
             initWorker(sequence, out progress, out chiffreRepet);
 
-            while (!worker.CancellationPending == true)
+            while (!worker.CancellationPending)
             {
                 while (repetitionsActuelles < nombreRepetitions)
                 {
@@ -123,12 +123,9 @@ namespace WindowsFormsApplication1
                         }
                     }
                 }
-                worker.CancelAsync();
-                progress += 1;
-                e.Result = "finished";
             }
             e.Cancel = true;
-
+            mre.WaitOne();
         }
 
         private int getRepeatInstruction(int progress, int chiffreRepet)
@@ -221,53 +218,47 @@ namespace WindowsFormsApplication1
 
         private void button2_Click(object sender, EventArgs e)
         {
-            if (!bw.IsBusy)
+            mre.Reset();
+            pause = false;
+            initBackgroundWorker();
+            List<string> sequence = new List<string>();
+            OpenFileDialog fd = new OpenFileDialog();
+            Stream myStream;
+
+            fd.InitialDirectory = Environment.CurrentDirectory;
+            fd.Filter = "txt files (*.txt)|*.txt|All files (*.*)|*.*";
+
+            if (fd.ShowDialog() == DialogResult.OK)
             {
-                mre.Reset();
-                pause = false;
-                initBackgroundWorker();
-                List<string> sequence = new List<string>();
-                OpenFileDialog fd = new OpenFileDialog();
-                Stream myStream;
-
-                fd.InitialDirectory = Environment.CurrentDirectory;
-                fd.Filter = "txt files (*.txt)|*.txt|All files (*.*)|*.*";
-
-                if (fd.ShowDialog() == DialogResult.OK)
+                try
                 {
-                    try
+                    fd.OpenFile();
+
+                    if ((myStream = fd.OpenFile()) != null)
                     {
-                        fd.OpenFile();
-
-                        if ((myStream = fd.OpenFile()) != null)
+                        using (myStream)
                         {
-                            using (myStream)
-                            {
-                                StreamReader sr = new StreamReader(myStream);
+                            StreamReader sr = new StreamReader(myStream);
 
-                                foreach (string s in sr.ReadToEnd().Split(';'))
-                                {
-                                    if(!string.IsNullOrEmpty(s))
+                            foreach (string s in sr.ReadToEnd().Split(';'))
+                            {
+                                if (!string.IsNullOrEmpty(s))
                                     sequence.Add(s.Trim());
-                                }
                             }
                         }
                     }
-                    catch (Exception ex)
-                    {
-                        MessageBox.Show("Error: Could not read file from disk. Original error: " + ex.Message);
-                    }
                 }
-                if (sequence.Count() != 0)
+                catch (Exception ex)
                 {
-                    bw.CancelAsync();
-                    bw.RunWorkerAsync(sequence);
+                    MessageBox.Show("Error: Could not read file from disk. Original error: " + ex.Message);
                 }
             }
-            else
+            if (sequence.Count() != 0)
             {
                 bw.CancelAsync();
+                bw.RunWorkerAsync(sequence);
             }
+
         }
 
         private void bw_ProgressChanged(object sender, ProgressChangedEventArgs e)
@@ -277,6 +268,11 @@ namespace WindowsFormsApplication1
 
         private void bw_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
         {
+            BackgroundWorker worker = sender as BackgroundWorker;
+            worker.RunWorkerCompleted -= new RunWorkerCompletedEventHandler(bw_RunWorkerCompleted);
+            worker.DoWork -= new DoWorkEventHandler(bw_DoWork);
+            worker.Dispose();
+
             if ((e.Cancelled == true))
             {
                 this.tbProgress.Text = "Cancelled!";
@@ -286,7 +282,7 @@ namespace WindowsFormsApplication1
             {
                 this.tbProgress.Text = ("Error: " + e.Error.Message);
             }
-            else if(e.Result.ToString() == "finished")
+            else if (e.Result.ToString() == "finished")
             {
                 this.tbProgress.Text = "victoly";
             }

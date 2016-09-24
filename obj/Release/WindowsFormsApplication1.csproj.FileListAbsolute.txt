@@ -48,3 +48,14 @@ C:\Users\Formateur-C17\Desktop\Kev\mm\WindowsFormsApplication1\obj\Release\Windo
 C:\Users\Formateur-C17\Desktop\Kev\mm\WindowsFormsApplication1\obj\Release\WindowsFormsApplication1.exe
 C:\Users\Formateur-C17\Desktop\Kev\mm\WindowsFormsApplication1\obj\Release\WindowsFormsApplication1.pdb
 C:\Users\Formateur-C17\Desktop\Kev\mm\WindowsFormsApplication1\obj\Release\WindowsFormsApplication1.csprojResolveAssemblyReference.cache
+C:\Users\Kevin\Source\Repos\miaoumouse\bin\Release\WindowsFormsApplication1.exe.config
+C:\Users\Kevin\Source\Repos\miaoumouse\obj\Release\WindowsFormsApplication1.exe
+C:\Users\Kevin\Source\Repos\miaoumouse\obj\Release\WindowsFormsApplication1.pdb
+C:\Users\Kevin\Source\Repos\miaoumouse\bin\Release\WindowsFormsApplication1.exe
+C:\Users\Kevin\Source\Repos\miaoumouse\bin\Release\WindowsFormsApplication1.pdb
+C:\Users\Kevin\Source\Repos\miaoumouse\obj\Release\WindowsFormsApplication1.csprojResolveAssemblyReference.cache
+C:\Users\Kevin\Source\Repos\miaoumouse\obj\Release\WindowsFormsApplication1.Form1.resources
+C:\Users\Kevin\Source\Repos\miaoumouse\obj\Release\WindowsFormsApplication1.Formcap.resources
+C:\Users\Kevin\Source\Repos\miaoumouse\obj\Release\WindowsFormsApplication1.Form3.resources
+C:\Users\Kevin\Source\Repos\miaoumouse\obj\Release\WindowsFormsApplication1.Properties.Resources.resources
+C:\Users\Kevin\Source\Repos\miaoumouse\obj\Release\WindowsFormsApplication1.csproj.GenerateResource.Cache

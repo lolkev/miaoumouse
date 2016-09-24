@@ -72,7 +72,7 @@
             this.KeyPreview = true;
             this.Name = "Form1";
             this.Text = " :3 mao";
-            this.TopMost = false;
+            this.TopMost = true;
             this.Load += new System.EventHandler(this.Form1_Load);
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseDown);
             this.ResumeLayout(false);

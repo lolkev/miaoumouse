@@ -59,6 +59,10 @@ namespace WindowsFormsApplication1
                     Dispose();
                     save();
                     rightClick = 1;
+
+                    leftClicks = 0;
+                    scrolls = 0;
+                    keyboardInputs = 0;
                 }
             }
         }

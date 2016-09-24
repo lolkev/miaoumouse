@@ -36,3 +36,14 @@ C:\Users\Formateur-C17\Desktop\Kev\mm\WindowsFormsApplication1\bin\Debug\Nito.As
 C:\Users\Formateur-C17\Desktop\Kev\mm\WindowsFormsApplication1\bin\Debug\Nito.AsyncEx.xml
 C:\Users\Formateur-C17\Desktop\Kev\mm\WindowsFormsApplication1\bin\Debug\Nito.AsyncEx.Concurrent.xml
 C:\Users\Formateur-C17\Desktop\Kev\mm\WindowsFormsApplication1\bin\Debug\Nito.AsyncEx.Enlightenment.xml
+C:\Users\Kevin\Source\Repos\miaoumouse\bin\Debug\WindowsFormsApplication1.exe.config
+C:\Users\Kevin\Source\Repos\miaoumouse\obj\Debug\WindowsFormsApplication1.exe
+C:\Users\Kevin\Source\Repos\miaoumouse\obj\Debug\WindowsFormsApplication1.pdb
+C:\Users\Kevin\Source\Repos\miaoumouse\bin\Debug\WindowsFormsApplication1.exe
+C:\Users\Kevin\Source\Repos\miaoumouse\bin\Debug\WindowsFormsApplication1.pdb
+C:\Users\Kevin\Source\Repos\miaoumouse\obj\Debug\WindowsFormsApplication1.csprojResolveAssemblyReference.cache
+C:\Users\Kevin\Source\Repos\miaoumouse\obj\Debug\WindowsFormsApplication1.Form1.resources
+C:\Users\Kevin\Source\Repos\miaoumouse\obj\Debug\WindowsFormsApplication1.Formcap.resources
+C:\Users\Kevin\Source\Repos\miaoumouse\obj\Debug\WindowsFormsApplication1.Form3.resources
+C:\Users\Kevin\Source\Repos\miaoumouse\obj\Debug\WindowsFormsApplication1.Properties.Resources.resources
+C:\Users\Kevin\Source\Repos\miaoumouse\obj\Debug\WindowsFormsApplication1.csproj.GenerateResource.Cache
