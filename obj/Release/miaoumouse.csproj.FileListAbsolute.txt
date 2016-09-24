@@ -1,0 +1,10 @@
+C:\Users\Kevin\Source\Repos\miaoumouse\bin\Release\miaoumouse.exe.config
+C:\Users\Kevin\Source\Repos\miaoumouse\bin\Release\miaoumouse.exe
+C:\Users\Kevin\Source\Repos\miaoumouse\bin\Release\miaoumouse.pdb
+C:\Users\Kevin\Source\Repos\miaoumouse\obj\Release\WindowsFormsApplication1.Form1.resources
+C:\Users\Kevin\Source\Repos\miaoumouse\obj\Release\WindowsFormsApplication1.Formcap.resources
+C:\Users\Kevin\Source\Repos\miaoumouse\obj\Release\WindowsFormsApplication1.Form3.resources
+C:\Users\Kevin\Source\Repos\miaoumouse\obj\Release\miaoumouse.Properties.Resources.resources
+C:\Users\Kevin\Source\Repos\miaoumouse\obj\Release\miaoumouse.csproj.GenerateResource.Cache
+C:\Users\Kevin\Source\Repos\miaoumouse\obj\Release\miaoumouse.exe
+C:\Users\Kevin\Source\Repos\miaoumouse\obj\Release\miaoumouse.pdb

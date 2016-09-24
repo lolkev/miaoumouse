@@ -59,3 +59,4 @@ C:\Users\Kevin\Source\Repos\miaoumouse\obj\Release\WindowsFormsApplication1.Form
 C:\Users\Kevin\Source\Repos\miaoumouse\obj\Release\WindowsFormsApplication1.Form3.resources
 C:\Users\Kevin\Source\Repos\miaoumouse\obj\Release\WindowsFormsApplication1.Properties.Resources.resources
 C:\Users\Kevin\Source\Repos\miaoumouse\obj\Release\WindowsFormsApplication1.csproj.GenerateResource.Cache
+C:\Users\Kevin\Source\Repos\miaoumouse\bin\Release\miaoumouse.exe.config
